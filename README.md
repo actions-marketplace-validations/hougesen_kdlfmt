@@ -7,7 +7,7 @@ kdlfmt is a thin cli wrapper built on-top of the official `kdl` parser for Rust 
 <!-- START_SECTION:base-command-help -->
 
 ```
-kdlfmt 0.1.0
+kdlfmt 0.1.4
 A code formatter for kdl documents.
 Mads Hougesen <mads@mhouge.dk>
 
@@ -201,6 +201,17 @@ Options:
 
 It uses the same syntax as `.gitignore` files.
 
+### Configuration
+
+A sample configuration file can be created by running `kdlfmt init`.
+
+```kdl
+// Amount of spaces to use for each indentation level
+indent_size 4
+// Whether to use tabs or spaces for indentation
+use_tabs #false
+```
+
 ### GitHub Action
 
 There are a lot of different ways to run `kdlfmt` using GitHub actions.
@@ -230,6 +241,33 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: "style: formatted kdl"
+```
+
+### pre-commit
+
+See [pre-commit](https://github.com/pre-commit/pre-commit) for instructions
+
+Sample `.pre-commit-config.yaml`:
+
+```yaml
+repos:
+  - repo: https://github.com/hougesen/kdlfmt
+    rev: main
+    hooks:
+      - id: kdlfmt-format
+```
+
+### treefmt
+
+Add the following to your `treefmt.toml` to run kdlfmt using [treefmt](https://github.com/numtide/treefmt).
+
+```toml
+# treefmt.toml
+
+[formatter.kdlfmt]
+command = "kdlfmt"
+options = ["format"]
+includes = ["*.kdl"]
 ```
 
 ### Shell completion
