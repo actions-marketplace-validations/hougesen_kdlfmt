@@ -7,7 +7,7 @@ kdlfmt is a thin cli wrapper built on-top of the official `kdl` parser for Rust 
 <!-- START_SECTION:base-command-help -->
 
 ```
-kdlfmt 0.1.5
+kdlfmt 0.1.6
 A code formatter for kdl documents.
 Mads Hougesen <mads@mhouge.dk>
 
@@ -27,6 +27,16 @@ Options:
 ```
 
 <!-- END_SECTION:base-command-help -->
+
+## Specifying KDL version
+
+This tool supports both KDL version 1 and version 2.
+
+KDL version 2 is NOT 100% backward compatible with version 1, so knowing which version you wish to format using is important.
+
+By default this tool tries to format using version 2 first, and then version 1.
+
+To specify which version you wish to use supply the `--kdl-version` argument to the command.
 
 ## Installation
 
