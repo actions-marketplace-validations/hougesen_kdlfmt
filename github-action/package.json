@@ -1,6 +1,6 @@
 {
   "name": "setup-kdlfmt",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Setup kdlfmt cli in GitHub Actions",
   "main": "src/index.mjs",
   "repository": {
@@ -31,15 +31,15 @@
     "lint:eslint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@actions/core": "^3.0.0",
+    "@actions/core": "^3.0.1",
     "@actions/tool-cache": "^4.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.4",
+    "@biomejs/biome": "^2.5.2",
     "@eslint/js": "^10.0.1",
-    "@types/node": "22.x",
-    "esbuild": "^0.27.3",
-    "eslint": "^10.0.2",
-    "globals": "^17.3.0"
+    "@types/node": "26.x",
+    "esbuild": "^0.28.1",
+    "eslint": "^10.6.0",
+    "globals": "^17.7.0"
   }
 }
